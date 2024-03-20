@@ -22,7 +22,10 @@ orderRouter.post('/', auth, async (req, res) => {
   
 orderRouter.get('/',async (req, res) => {
     try {
-      const orders = await Order.find().populate('User').populate('Book');
+      const orders = await Order.find().populate({
+        path: 'user',
+        select: '-password' 
+      }).populate('books');
       res.status(200).json({"Orders" :orders});
     } catch (error) {
       console.error(error);
