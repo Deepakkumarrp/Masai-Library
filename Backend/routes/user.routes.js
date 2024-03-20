@@ -20,7 +20,7 @@ userRouter.post("/register", async (req, res) => {
       if (err) {
         res.status(400).json(err);
       } else {
-        const newUser = new User({ name, email, password, isAdmin });
+        const newUser = new User({ name, email,password: hash, isAdmin });
         await newUser.save();
         res.status(201).json({ mssg: "Registered Successfully." });
       }
@@ -36,18 +36,18 @@ userRouter.post("/login",async(req,res) => {
         const user = await User.findOne({email});
         if(user){
             bcrypt.compare(password, user.password, function(err, result) {
-                if(!err){
+                if(result){
                     const token = jwt.sign({userID : user._id}, JWT_SECRET);
-                    return res.send({"mssg":"Logged in",token})
+                    return res.status(201).send({"mssg":"Logged in",token})
                 }else{
-                    res.send({"mssg":"wrong credentials"});
+                    res.status(400).send({"mssg":"wrong credentials"});
                 }
             })
         }else{
-            res.send({"mssg":"User not found"})
+            res.status(400).json({"mssg":"User not found"})
         }
     }catch(err){
-        res.send({err});
+        res.status(400).json({err});
     }
 })
 
