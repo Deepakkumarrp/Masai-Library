@@ -2,6 +2,7 @@ const express = require("express");
 const { connection } = require("./config/db");
 const { userRouter } = require("./routes/user.routes");
 const { bookRouter } = require("./routes/book.routes");
+const { orderRouter } = require("./routes/order.routes");
 
 require("dotenv").config();
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use("/api", userRouter);
 app.use("/api/books", bookRouter);
+app.use("/api/orders", orderRouter);
 
 app.get("/",(req,res) => {
     res.json({ mssg : "Welcome to the home page"})
