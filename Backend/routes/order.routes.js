@@ -2,6 +2,7 @@ const express = require("express");
 const orderRouter = express.Router();
 const { Order } = require("../models/order.model");
 const { auth } = require("../middleware/auth.middleware");
+const { access } = require("../middleware/access.middleware");
 
 orderRouter.post('/', auth, async (req, res) => {
     try {
@@ -18,7 +19,7 @@ orderRouter.post('/', auth, async (req, res) => {
   });
   
   
-orderRouter.get('/', auth, async (req, res) => {
+orderRouter.get('/', auth, access(["Admin"]), async (req, res) => {
     try {
       const orders = await Order.find().populate('user').populate('books');
       res.status(200).json(orders);
