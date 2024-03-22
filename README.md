@@ -1,12 +1,3 @@
-
-#Admin-Login:
-  email : "deepakkumarrp@gmail.com"
-  password : "admin"
-
-#User-Login:
-    "email": "user@gmail.com",
-    "password":"user"
-
 # Masai-Library
 
 Welcome to the Masai Library, a powerful solution for efficiently managing and ordering books from here.
@@ -18,9 +9,9 @@ Welcome to the Masai Library, a powerful solution for efficiently managing and o
 
 ## Login Credentials 
 
- ###Admin-Login:{email : "deepakkumarrp@gmail.com", password : "admin"}
+ ### Admin-Login: {"email" : "deepakkumarrp@gmail.com", "password" : "admin"}
 
- ###User-Login:{"email": "user@gmail.com", "password":"user"}
+ ### User-Login: {"email": "user@gmail.com", "password":"user"}
 
 # Node.js EndPoints
 
@@ -45,6 +36,13 @@ Welcome to the Masai Library, a powerful solution for efficiently managing and o
 - **Description:** Endpoint for user logout.
 - **Input:** HTTP headers containing the access token.
 - **Output:** JSON response confirming the logout process.
+
+### `/api/books`
+
+- **Method:** GET
+- **Description:** Endpoint for getting the data of all books.
+- **Input:** none.
+- **Output:** JSON response indicating the success or failure of the data of all books , along with any relevant error messages.
 
 ### `/api/books`
 
