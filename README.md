@@ -9,9 +9,13 @@ Welcome to the Masai Library, a powerful solution for efficiently managing and o
 
 ## Login Credentials 
 
- ### Admin-Login: {"email" : "deepakkumarrp@gmail.com", "password" : "admin"}
+ ### Admin-Login: 
+ - email: "deepakkumarrp@gmail.com"
+ - password: "admin"
 
- ### User-Login: {"email": "user@gmail.com", "password":"user"}
+ ### User-Login: 
+ - email: "ak417@gmail.com"
+ - password: "1234"
 
 # Node.js EndPoints
 
