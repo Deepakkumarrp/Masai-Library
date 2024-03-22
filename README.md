@@ -16,6 +16,12 @@ Welcome to the Masai Library, a powerful solution for efficiently managing and o
 - **Admin Privileges:** Administrators have full control over managing books within the system.
 - **User Interactions:** Users can order and buy books, and access the available library.
 
+## Login Credentials 
+
+ ###Admin-Login:{email : "deepakkumarrp@gmail.com", password : "admin"}
+
+ ###User-Login:{"email": "user@gmail.com", "password":"user"}
+
 # Node.js EndPoints
 
 
